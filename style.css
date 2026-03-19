@@ -1,30 +1,33 @@
 :root {
-  --primary_color: #16a3d6;
-  --secondary_color: #1c1a31;
-  --background_color: #091224;
-  --light_color: #f2f2f2;
-  --dark_color: #1f1f1f;
+  --primary_color: #ffde42;
+  --secondary_color: #2fa4d7;
+  --light_color: #f3f4f4;
+  --dark_color: #091413;
+  --grey_color: #777c6d;
+  --header_height: 80px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: "wdth", 100;
   line-height: 1.6;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-snap-type: mandatory;
+  cursor: default;
 }
 
 body {
-  background-color: var(--background_color);
+  background-color: var(--dark_color);
+  max-width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 h1,
@@ -38,113 +41,114 @@ a {
   color: var(--light_color);
 }
 
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
 header {
+  width: 100%;
+  height: var(--header_height);
+  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
-  width: 100%;
-  min-height: 80px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
-  flex-wrap: wrap;
-  transition: transform 0.3s ease-in-out;
+  justify-content: space-between;
 }
 
-.hidden_header {
-  transform: translateY(-100%);
+.brand_name {
+  margin-left: 5%;
+  font-size: 2rem;
+  text-wrap: nowrap;
 }
 
-.dev_name {
-  margin: auto 40px;
-  padding: 10px;
-  /* border: 1px solid var(--dark_color) */
+.nav_section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 5%;
 }
 
-.navbar ul {
+.nav_option {
   list-style-type: none;
   display: flex;
-  gap: 80px;
-  padding: 10px;
-  margin: 0 40px;
+  gap: 40px;
+  margin-right: 40px;
 }
 
-.active {
-  text-decoration: underline;
-  text-decoration-thickness: 0.2em;
-  text-underline-offset: 0.5em;
+.nav {
+  color: var(--light_color);
+  font-size: 1rem;
+  transition: ease-in-out 0.5;
+}
+
+.active_nav,
+.nav:hover {
   color: var(--primary_color);
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  transform: scale(1.2);
 }
 
-section {
-  width: 100vw;
-  height: 100vh;
-  border: 1px solid var(--dark_color);
-}
-
-.landing_page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.home_content_wrapper {
-  height: 100%;
-  width: 100%;
-  /* margin: 0 40px; */
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  /* border: 1px solid var(--dark_color); */
-}
-
-.avatar_wrapper {
-  max-height: 280px;
-  max-width: 280px;
-  border: 5px solid var(--primary_color);
-  border-radius: 50%;
-  box-shadow: 0px 0px 80px var(--primary_color);
-}
-
-.avatar_wrapper img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  /* border: 1px solid var(--dark_color); */
-}
-
-.full_name {
-  font-size: 4.5em;
-  padding: 0;
-  margin: 0;
-  /* border: 1px solid var(--dark_color); */
-}
-
-.tagline {
-  /* border: 1px solid var(--dark_color); */
-  padding: 5px;
-  text-wrap: wrap;
-}
-
-.download_resume {
-  border: 0;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 10px;
-  font-size: 1em;
+.hire_me_btn {
+  min-width: 150px;
+  min-height: 50%;
+  font-size: 1.5rem;
   font-weight: 500;
-  color: var(--dark_color);
+  border-radius: 10px;
+  border: 1px solid var(--dark_color);
   background-color: var(--primary_color);
-  transition: box-shadow 0.3s ease;
+  transition: ease-in-out 0.5;
 }
 
-.download_resume:hover {
-  box-shadow: 0px 0px 20px var(--primary_color);
+.hire_me_btn:hover {
+  box-shadow: 0 0 10px var(--primary_color);
+  transform: scale(1.1);
+}
+
+.home {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 5%;
+}
+
+.role {
+  font-size: 3rem;
+}
+
+.motto {
+  font-size: 1.5rem;
+}
+
+.why_me_btn {
+  min-width: 180px;
+  min-height: 60px;
+  background-color: var(--primary_color);
+  border-radius: 10px;
+  border: 1px solid var(--dark_color);
+  font-size: 1.5rem;
+  margin-top: 15px;
+  transition: ease-in-out 0.5;
+}
+
+.why_me_btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--primary_color);
+}
+
+.image_wrapper {
+  width: 360px;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 50%;
+  /* border: 1px solid var(--dark_color); */
+  box-shadow: 0 0 50px var(--primary_color);
+}
+
+.profile_pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
