@@ -22,27 +22,52 @@
       <h1 class="brand_name">Melchard Lina</h1>
       <nav class="nav_section">
         <ul class="nav_option">
-          <li class="nav">Works</li>
-          <li class="nav">About</li>
-          <li class="nav">Contact</li>
+          <li id="nav_home" class="nav">Home</li>
+          <li id="nav_works" class="nav">Works</li>
+          <li id="nav_about" class="nav">About</li>
+          <li id="nav_contact" class="nav">Contact</li>
         </ul>
         <button class="hire_me_btn">Hire Me!</button>
       </nav>
     </header>
-    <!-- home -->
-     <section class="home">
-      <div class="intro">
-        <h1 class="role">Backend Web Developer</h1>
-        <h3 class="motto">Automate Small Tasks. Solve Big Problems.</h3>
-        <button class="why_me_btn">Why me?</button>
-      </div>
-      <div class="image_wrapper">
-        <img src="assets/images/profile.png" alt="Avatar" class="profile_pic">
-      </div>
-     </section>    <!-- works -->
-    <!-- about -->
-    <!-- contact -->
-    <!-- footer -->
+
+    <main>
+      <!-- home -->
+      <section id="home">
+        <div class="intro toggleable" data-hidden_style="hidden-left">
+          <h1 class="role">Backend Web Developer</h1>
+          <h3 class="motto">Automate Small Tasks. Solve Big Problems.</h3>
+          <button class="why_me_btn">Why me?</button>
+        </div>
+        <div class="image_wrapper toggleable" data-hidden_style="hidden-right">
+          <img
+            src="assets/images/profile.png"
+            alt="Avatar"
+            class="profile_pic"
+          />
+        </div>
+      </section>
+      <!-- works -->
+      <section id="works">
+        <div class="intro toggleable" data-hidden_style="hidden-left">
+          <h1 class="role">Backend Web Developer</h1>
+          <h3 class="motto">Automate Small Tasks. Solve Big Problems.</h3>
+          <button class="why_me_btn">Why me?</button>
+        </div>
+        <div class="image_wrapper toggleable" data-hidden_style="hidden-right">
+          <img
+            src="assets/images/profile.png"
+            alt="Avatar"
+            class="profile_pic"
+          />
+        </div>
+      </section>
+      <!-- about -->
+      <section id="about"></section>
+      <!-- contact -->
+      <section id="contact"></section>
+      <!-- footer -->
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

@@ -19,13 +19,14 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: mandatory;
+  /* scroll-snap-type: mandatory; */
   cursor: default;
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--dark_color);
-  max-width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow-x: hidden;
 }
@@ -41,6 +42,11 @@ a {
   color: var(--light_color);
 }
 
+main {
+  width: 100%;
+  height: 100%;
+}
+
 header {
   width: 100%;
   height: var(--header_height);
@@ -48,6 +54,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -77,7 +84,7 @@ header {
 .nav {
   color: var(--light_color);
   font-size: 1rem;
-  transition: ease-in-out 0.5;
+  transition: all 0.2s ease-in-out;
 }
 
 .active_nav,
@@ -97,7 +104,7 @@ header {
   border-radius: 10px;
   border: 1px solid var(--dark_color);
   background-color: var(--primary_color);
-  transition: ease-in-out 0.5;
+  transition: all 0.2s ease-in-out;
 }
 
 .hire_me_btn:hover {
@@ -105,13 +112,17 @@ header {
   transform: scale(1.1);
 }
 
-.home {
+section {
+  width: 100%;
   height: 100%;
+  padding: 5%;
+}
+
+#home {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 5%;
 }
 
 .role {
@@ -130,7 +141,7 @@ header {
   border: 1px solid var(--dark_color);
   font-size: 1.5rem;
   margin-top: 15px;
-  transition: ease-in-out 0.5;
+  transition: all 0.2s ease-in-out;
 }
 
 .why_me_btn:hover {
@@ -139,11 +150,10 @@ header {
 }
 
 .image_wrapper {
-  width: 360px;
-  height: 360px;
+  width: 320px;
+  height: 320px;
   overflow: hidden;
   border-radius: 50%;
-  /* border: 1px solid var(--dark_color); */
   box-shadow: 0 0 50px var(--primary_color);
 }
 
@@ -151,4 +161,19 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.toggleable {
+  transition: all 0.6s ease-in-out;
+  opacity: 1;
+}
+
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-150%);
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(150%);
 }
