@@ -4,18 +4,15 @@ const Main = document.querySelector("main");
 const Sections = document.querySelectorAll("section");
 var lastDisplayedSection = document.querySelector("#home");
 var lastShowedElements = lastDisplayedSection.querySelectorAll(".toggleable");
-const ToggleClasses = ["hidden-left", "hidden-right"];
-var isScrolling = true;
+const ToggleClasses = ["hidden-left", "hidden-right", "disappear"];
+var lastNav = document.querySelector("#nav_home");
+var navBarClicked = false;
 
 // function
-const updateNav = (currentNav = null) => {
-  NavOptions.forEach((nav) => {
-    if (nav == currentNav) {
-      nav.classList.add("active_nav");
-    } else {
-      nav.classList.remove("active_nav");
-    }
-  });
+const updateNav = (currentNav) => {
+  lastNav.classList.remove("active_nav");
+  currentNav.classList.add("active_nav");
+  lastNav = currentNav;
 };
 
 const displayElement = (element) => {
@@ -29,9 +26,11 @@ const hideElement = (element, hiddenClass) => {
 const toggleElements = (displayedSection) => {
   let toggleableElements = displayedSection.querySelectorAll(".toggleable");
 
+  // hide elements when section is not displayed, display otherwise
   if (displayedSection != lastDisplayedSection) {
     lastShowedElements.forEach((element) => {
       let hiddenClass = element.dataset.hidden_style;
+      if (element.classList.contains(hiddenClass)) return;
       hideElement(element, hiddenClass);
     });
 
@@ -42,21 +41,24 @@ const toggleElements = (displayedSection) => {
   toggleableElements.forEach((element) => {
     displayElement(element);
   });
-  // update active nav when scrolled
+  // update corresponding nav
   let nav = document.querySelector("#nav_" + displayedSection.id);
-  updateNav(nav);
+  if (navBarClicked == false) updateNav(nav); // avoid unnecessary repetition of nav update when jumping to multiple sections
+  navBarClicked = false;
 };
 
-//  set navigation to active when corresponding section is viewed
+//  update active status of nav and jump to corresponding section
 NavOptions.forEach((nav) => {
   nav.addEventListener("click", (event) => {
-    updateNav(event.currentTarget);
+    navBarClicked = true;
+    updateNav(event.currentTarget); // avoid delay in status update
     let navId = event.currentTarget.id;
     let clickedSection = navId.replace("nav_", "");
     let section = document.querySelector("#" + clickedSection);
 
-    if (section == null) return;
+    if (section == null || section == lastDisplayedSection) return; // don't change anything if section is already displayed
 
+    // hide elements before jumping to selected section
     let toHideElements = lastDisplayedSection.querySelectorAll(".toggleable");
     toHideElements.forEach((element) => {
       hideElement(element, element.dataset.hidden_style);
@@ -71,15 +73,14 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log("intersecting");
-        let sectionId = entry.target.id;
-        toggleElements(entry.target); // show hidden element for displayed section
+        toggleElements(entry.target);
       }
     });
   },
   { root: null, threshold: 0.6 },
 );
 
+// observe when section is displayed
 Sections.forEach((section) => {
   observer.observe(section);
 });

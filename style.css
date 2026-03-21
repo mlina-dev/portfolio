@@ -3,7 +3,7 @@
   --secondary_color: #2fa4d7;
   --light_color: #f3f4f4;
   --dark_color: #091413;
-  --grey_color: #777c6d;
+  --grey_color: #20292c;
   --header_height: 80px;
 }
 
@@ -19,16 +19,22 @@
 
 html {
   scroll-behavior: smooth;
-  /* scroll-snap-type: mandatory; */
   cursor: default;
   overflow-x: hidden;
 }
 
 body {
   background-color: var(--dark_color);
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+main {
+  width: 100%;
+  position: relative;
+  top: var(--header_height);
 }
 
 h1,
@@ -42,11 +48,7 @@ a {
   color: var(--light_color);
 }
 
-main {
-  width: 100%;
-  height: 100%;
-}
-
+/* header */
 header {
   width: 100%;
   height: var(--header_height);
@@ -59,10 +61,10 @@ header {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
+  padding: 0px var(--header_height);
 }
 
 .brand_name {
-  margin-left: 5%;
   font-size: 2rem;
   text-wrap: nowrap;
 }
@@ -71,7 +73,6 @@ header {
   height: 100%;
   display: flex;
   align-items: center;
-  margin-right: 5%;
 }
 
 .nav_option {
@@ -84,7 +85,7 @@ header {
 .nav {
   color: var(--light_color);
   font-size: 1rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .active_nav,
@@ -104,7 +105,7 @@ header {
   border-radius: 10px;
   border: 1px solid var(--dark_color);
   background-color: var(--primary_color);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .hire_me_btn:hover {
@@ -112,17 +113,25 @@ header {
   transform: scale(1.1);
 }
 
+/* contents */
 section {
   width: 100%;
-  height: 100%;
-  padding: 5%;
+  height: 100vh;
+  scroll-snap-align: start;
 }
 
+/* home section */
 #home {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
 }
 
 .role {
@@ -134,14 +143,15 @@ section {
 }
 
 .why_me_btn {
-  min-width: 180px;
-  min-height: 60px;
+  width: 180px;
+  height: 60px;
   background-color: var(--primary_color);
   border-radius: 10px;
   border: 1px solid var(--dark_color);
   font-size: 1.5rem;
+  font-weight: 500;
   margin-top: 15px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .why_me_btn:hover {
@@ -149,20 +159,86 @@ section {
   box-shadow: 0 0 15px var(--primary_color);
 }
 
-.image_wrapper {
+.profile_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_pic {
   width: 320px;
-  height: 320px;
+  aspect-ratio: 1/1;
+  /* object-fit: cover; */
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 0 0 50px var(--primary_color);
 }
 
-.profile_pic {
+/* works */
+.section_title {
+  padding-top: var(--header_height);
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.section_content {
+  padding-left: var(--header_height);
+  padding-right: var(--header_height);
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+}
+
+.group {
+  display: flex;
+  animation: slideLeft 15s infinite linear;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 300px;
+  aspect-ratio: 3/4;
+  margin: 20px;
+  padding: 10px;
+  background-color: var(--grey_color);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  opacity: 0.9;
+  transform: scale(0.9);
+  box-shadow: 0 0 20px var(--primary_color);
+}
+
+.work_img_wrapper {
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+.work_img_wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
 }
 
+.project_title {
+  font-size: 1rem;
+  padding-top: 10px;
+}
+
+/* toggle classes */
 .toggleable {
   transition: all 0.6s ease-in-out;
   opacity: 1;
@@ -176,4 +252,19 @@ section {
 .hidden-right {
   opacity: 0;
   transform: translateX(150%);
+}
+
+.disappear {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
 }
