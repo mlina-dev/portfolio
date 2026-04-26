@@ -13,8 +13,14 @@
       rel="stylesheet"
     />
 
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
     <!-- styles -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <!-- header -->
@@ -23,7 +29,7 @@
       <nav class="nav_section">
         <ul class="nav_option">
           <li id="nav_home" class="nav">Home</li>
-          <li id="nav_works" class="nav">Works</li>
+          <li id="nav_works" class="nav">Work</li>
           <li id="nav_about" class="nav">About</li>
           <li id="nav_contact" class="nav">Contact</li>
         </ul>
@@ -35,7 +41,7 @@
       <section id="home">
         <div class="intro toggleable" data-hidden_style="hidden-left">
           <h1 class="dev_name">Hello, I'm <span>Melchard Lina</span></h1>
-          <h2 class="role">Full Stack Web Developer</h2>
+          <h2 class="role">Junior Full Stack Web Developer</h2>
           <p class="motto">
             I help individuals and businesses grow their online presence by
             creating modern, high-performing websites that make them stand out.
@@ -52,46 +58,51 @@
       </section>
       <!-- works -->
       <section id="works">
-        <h1 class="section_header toggleable" data-hidden_style="disappear">
-          Featured Projects
+        <h1 class="section_header toggleable" data-hidden_style="hidden-right">
+          Featured Project
         </h1>
-        <div class="gallery toggleable" data-hidden_style="disappear">
-          <div class="card">
-            <div class="gallery_wrapper">
-              <img src="assets/images/works/leopards.jpg" alt="Work Gallery" />
+        <div class="work_container toggleable" data-hidden_style="hidden-right">
+          <div class="page left_page">
+            <div class="img_wrapper">
+              <img
+                src="/assets/images/works/leopardswebsite.avif"
+                alt="Featured Project"
+              />
             </div>
-            <div class="work_info">
-              <p class="work_title">Booking Automation</p>
-              <p class="work_desc">
-                A streamlined reservation system for luxury resorts
-              </p>
-              <div class="work_categories">
-                <p class="work_category">Automation</p>
-                <p class="work_category">Website</p>
-              </div>
+            <div class="tech_stack">
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>JavaScript</p>
+              <p>PHP</p>
             </div>
-            <div class="zoom_overlay"><span>+</span></div>
           </div>
-          <div class="card">
-            <div class="gallery_wrapper">
-              <img src="assets/images/works/resort.jpeg" alt="Work Gallery" />
-            </div>
-            <div class="work_info">
-              <p class="work_title">Booking Automation</p>
-              <p class="work_desc">
-                A streamlined reservation system for luxury resorts
-              </p>
-              <div class="work_categories">
-                <p class="work_category">Automation</p>
-                <p class="work_category">Website</p>
-              </div>
-            </div>
-            <div class="zoom_overlay"><span>+</span></div>
+          <div class="page right_page">
+            <h1 class="work_title">Booking Automation System</h1>
+            <h3 class="work_role">Backend Developer (Database and System Flow Contributor)</h3>
+            <ul class="work_features">
+              <li>
+                <i class="fa-solid fa-database"></i><span>Centralized Records. </span>
+                <p>Eliminates manual data errors</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-magnifying-glass"></i><span>Live Tracking. </span>
+                <p>Prevents double booking real-time</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-robot"></i><span>Task Automation. </span>
+                <p>Slays time-consuming admin work</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-message"></i><span>Instant Notications. </span>
+                <p>Automated SMS and email updates</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-clipboard-check"></i><span>Error Reduction. </span>
+                <p>Replaces risky manual process</p>
+              </li>
+            </ul>
+            <a href="https://leopardsresort.online" target="blank" class="visit_site_btn">Visit Website</a>
           </div>
-          <div class="card upcoming_projects">
-            <p>Upcoming...</p>
-          </div>
-        </div>
       </section>
       <!-- about -->
       <section id="about"></section>
@@ -99,6 +110,7 @@
       <section id="contact"></section>
       <!-- footer -->
     </main>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/work_gallery.js"></script>
   </body>
 </html>
