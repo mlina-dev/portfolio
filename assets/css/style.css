@@ -1,9 +1,14 @@
 :root {
-  --background: hsl(0 0 5%);
-  --secondary_bg: hsl(0 0 25%);
-  --gray: hsl(0 0 50%);
-  --muted: hsl(0 0 75%);
-  --white: hsl(0 0 95%);
+  --dark_bg: oklch(5% 0 0);
+  --bg: oklch(20% 0 0);
+  --light_bg: oklch(30% 0 0);
+  --text: oklch(90% 0 0);
+  --text_dark: oklch(25% 0 0);
+  --muted: oklch(70% 0 0);
+  --btn_light: oklch(90% 0 0);
+  --highlight: oklch(100% 0 0);
+  --border: oklch(60% 0 0);
+  --progress_bar: oklch(85% 0 0);
 }
 
 * {
@@ -11,12 +16,13 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  list-style: none;
   font-family: "Roboto", sans-serif;
 }
 
 body {
   overflow-x: hidden;
-  background-color: var(--background);
+  background-color: var(--bg);
 }
 
 a,
@@ -28,14 +34,65 @@ h4,
 h5,
 h6,
 i {
-  color: var(--white);
+  color: var(--text);
+}
+
+/* Reusable classes */
+.card {
+  padding: 2.5rem;
+  background: linear-gradient(var(--light_bg), var(--bg));
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow:
+    -2px 2px 10px var(--dark_bg),
+    inset -1px 2px 3px var(--highlight);
+}
+
+.btn_primary {
+  border-radius: 30px;
+  box-shadow:
+    inset 1px -2px 5px var(--light_bg),
+    inset -1px 2px var(--highlight),
+    -1px 3px 5px var(--dark_bg);
+  background-color: var(--btn_light);
+  border: 1px solid var(--border);
+  color: var(--text_dark);
+  font-weight: 600;
+  transition: all 0.1s ease;
+}
+
+.btn_primary:hover {
+  transform: scale(1.1);
+}
+
+.btn_secondary {
+  border-radius: 30px;
+  border: 3px solid var(--btn_light);
+  box-shadow: -1px 3px 5px var(--dark_bg);
+  transition: all 0.1s ease;
+  font-weight: 500;
+  background: linear-gradient(var(--light_bg), var(--bg));
+}
+
+.btn_secondary:hover {
+  color: var(--text_dark);
+  background: var(--btn_light);
+}
+
+.header_title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
 section {
   width: 100vw;
-  padding: 5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 5rem;
 }
 
+/* Header */
 header {
   position: fixed;
   top: 0;
@@ -45,7 +102,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5rem;
-  background: var(--background);
+  background: var(--bg);
 }
 
 header .logo {
@@ -65,16 +122,12 @@ header .logo {
 .active {
   text-decoration: underline;
   text-underline-offset: 0.5rem;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
   transform: scale(1.1);
 }
 
 .contact_btn {
-  padding: 1rem 2rem;
-  box-shadow: inset 2px -2px 10px var(--background);
-  background-color: var(--white);
-  border-radius: 30px;
-  color: var(--background);
+  padding: 0.75rem 1.5rem;
 }
 
 .menu_btn {
@@ -91,7 +144,8 @@ header .logo {
   transform: scale(1.1);
 }
 
-.home_section {
+/* Home Section */
+#home_section {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -120,7 +174,8 @@ header .logo {
   height: auto;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: -2px 2px 20px var(--gray);
+  box-shadow: -10px 10px 50px var(--dark_bg);
+  border: 1px solid var(--border);
 }
 
 .home_intro {
@@ -132,53 +187,229 @@ header .logo {
 .dev_name {
   font-size: 3rem;
   padding-left: 0.7rem;
-  color: var(--white);
+  color: var(--text);
 }
 
 .role {
   font-size: 2rem;
-  color: var(--white);
+  color: var(--text);
+  border-right: 3px solid var(--text);
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+  animation: blinking 0.4s step-end infinite;
 }
 
 .tagline {
-  color: var(--gray);
+  color: var(--muted);
   padding-top: 1rem;
   padding-bottom: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .download_resume {
   width: fit-content;
   padding: 1rem 2rem;
-  background-color: var(--white);
-  box-shadow: inset 2px -2px 10px var(--background);
-  border-radius: 300px;
-  color: var(--background);
-}
-
-.download_resume:hover {
-  transform: scale(1.1);
+  letter-spacing: 2px;
 }
 
 .contacts_home {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   padding-top: 2rem;
-  color: var(--gray);
+  color: var(--light_bg);
 }
 
 .contacts_home a {
+  font-size: 0.75rem;
   padding: 0.5rem;
-  border: 1px solid var(--white);
+  color: var(--muted);
   border-radius: 50%;
+  border: 1px solid var(--border);
+  box-shadow: -1px 2px 5px var(--dark_bg);
 }
 
 .contacts_home a:hover {
-  box-shadow: 0px 0px 5px var(--white);
+  box-shadow: 0px 0px 5px var(--text);
   transform: scale(1.1);
 }
 
+/* About Section */
+#about_section {
+  display: flex;
+  flex-direction: column;
+}
+
+.about_card p {
+  font-size: 1.2rem;
+  line-height: 2.5;
+}
+
+.about_cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.btn_view_my_work,
+.btn_about_contact {
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+/* Stack Section */
+.stack_container {
+  display: flex;
+  gap: 2rem;
+}
+
+.tech_stack {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tech_stack p {
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+
+.progress_bar {
+  margin-top: 10px;
+  width: 100%;
+  height: 30px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.progress_line {
+  height: 100%;
+  background-color: var(--progress_bar);
+  border-radius: 30px;
+  box-shadow:
+    inset 2px -2px 5px var(--dark_bg),
+    inset -2px 2px 5px var(--highlight);
+}
+
+/* Projects Section */
+.project_container {
+  display: flex;
+  gap: 2rem;
+}
+
+.project_info {
+  width: 50%;
+}
+
+.project_title {
+  font-size: 2rem;
+}
+
+.project_tech {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.project_tech li {
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  color: var(--muted);
+}
+
+.project_history {
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.breakdown-item {
+  margin-top: 1rem;
+}
+
+.project_problem {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.project_solution {
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.project_cta {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn_live_demo,
+.btn_view_code {
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+}
+
+/* Contact Section */
+#contact_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact_container {
+  width: fit-content;
+}
+
+.contact_container ul li {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.contact_container i {
+  font-size: 3rem;
+}
+
+.contact_container a {
+  font-size: 1.2rem;
+}
+
+.contact_container a:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* tablet device */
 @media (max-width: 900px) {
+  section {
+    padding: 3rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
   .menu_btn {
     display: block;
   }
@@ -187,12 +418,13 @@ header .logo {
     display: none;
   }
 
-  .home_section {
+  #home_section {
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
     gap: 3rem;
     padding-top: 7rem;
+    height: fit-content;
   }
 
   .home_profile,
@@ -213,8 +445,8 @@ header .logo {
     position: fixed;
     top: 0px;
     right: 0px;
-    background: var(--background);
-    border-left: 1px solid var(--secondary_bg);
+    background: var(--dark_bg);
+    border-left: 1px solid var(--light_bg);
     transition: all ease-in 1s;
   }
 
@@ -226,11 +458,22 @@ header .logo {
     font-size: 1.2rem;
     padding: 1rem 3rem;
   }
+
+  .stack_container,
+  .project_container {
+    flex-direction: column;
+  }
+
+  .tech_stack,
+  .project_info {
+    width: 100%;
+  }
 }
 
+/* mobile device */
 @media (max-width: 500px) {
   section {
-    padding: 3rem;
+    padding: 2rem;
   }
 
   header {
@@ -244,13 +487,19 @@ header .logo {
   header .logo {
     display: block;
     padding: 0.75rem;
-    border: 2px solid var(--white);
+    border: 2px solid var(--text);
     text-align: center;
     border-radius: 50%;
   }
+}
 
-  .home_section {
-    padding-left: 3rem;
-    padding-right: 3rem;
+@keyframes blinking {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: var(--text);
   }
 }
