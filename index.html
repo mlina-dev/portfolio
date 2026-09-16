@@ -29,40 +29,212 @@
       <div class="navigation">
         <a class="active" href="">Home</a>
         <a href="">About</a>
-        <a href="">Skill</a>
+        <a href="">Stack</a>
         <a href="">Project</a>
-        <a class="contact_btn" href="">Contact</a>
+        <a class="contact_btn btn_primary" href="">Contact</a>
       </div>
       <i class="fa-solid fa-bars menu_btn"></i>
       <div class="toggle_nav">
         <i class="fa-solid fa-x hide_nav_btn"></i>
         <a class="active" href="">Home</a>
         <a href="">About</a>
-        <a href="">Skill</a>
+        <a href="">Stack</a>
         <a href="">Project</a>
         <a href="">Contact</a>
       </div>
     </header>
-    <section class="home_section">
-      <div class="home_profile">
-        <img src="./assets/images/home_profile.webp" alt="Home Profile" />
-      </div>
-      <div class="home_intro">
-        <h2>Hi, I'm <span class="dev_name">Melchard Lina</span></h2>
-        <h2>And I'm a <span class="role">Web Developer</span></h2>
-        <p class="tagline">Automating repetitive tasks so you don't have to.</p>
-        <a href="" class="download_resume">Download Resume</a>
-        <div class="contacts_home">
-          <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-          <a href=""><i class="fa-regular fa-envelope"></i></a>
+    <main>
+      <section id="home_section">
+        <div class="home_profile">
+          <img src="./assets/images/home_profile.webp" alt="Home Profile" />
         </div>
-      </div>
-    </section>
-    <section class="about"></section>
-    <section class="skill"></section>
-    <section class="project"></section>
-    <section class="contact"></section>
+        <div class="home_intro">
+          <h2>Hi, I'm <span class="dev_name">Melchard Lina</span></h2>
+          <h2>And I'm a <span class="role">Web Developer</span></h2>
+          <p class="tagline">
+            Building solutions that work, one line of code at a time.
+          </p>
+          <a href="" class="download_resume btn_secondary">Download Resume</a>
+          <div class="contacts_home">
+            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+            <a href=""><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+      </section>
+      <section id="about_section">
+        <h1 class="header_title">Behind the Code</h1>
+        <div class="about_card">
+          <p>
+            I'm a fresh IT graduate and aspiring full-stack developer who enjoys
+            building things that solve real problems. I have hands-on experience
+            developing booking web applications using
+            <em>PHP, Laravel, Laravel Filament, HTML, CSS, and SQL,</em> with
+            experience working across both front end and back end. I'm also
+            exploring React Native for mobile development. While I'm still
+            developing my eye for design, I'm comfortable
+            <em>turning designs and ideas into functional applications</em>—and
+            I'm always learning how to make what I build better. I may be early
+            in my career, but I'm ready to learn, build, and grow.
+          </p>
+          <div class="about_cta">
+            <a class="btn_secondary btn_view_my_work" href="">View My Work</a>
+            <a class="btn_primary btn_about_contact" href="">Contact Me</a>
+          </div>
+        </div>
+      </section>
+      <section id="stack_section">
+        <h1 class="header_title">Tech Stack</h1>
+        <div class="stack_container">
+          <ul class="card tech_stack">
+            <li>
+              <p>PHP</p>
+              <div class="progress_bar">
+                <div class="progress_line" data-value="80"></div>
+              </div>
+            </li>
+            <li>
+              <p>HTML</p>
+              <div class="progress_bar">
+                <div class="progress_line" data-value="70"></div>
+              </div>
+            </li>
+            <li>
+              <p>CSS</p>
+              <div class="progress_bar">
+                <div class="progress_line" data-value="60"></div>
+              </div>
+            </li>
+            <li>
+              <p>JavaScript</p>
+              <div class="progress_bar">
+                <div class="progress_line" data-value="80"></div>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="card tech_stack">
+            <li>
+              <p>Laravel</p>
+              <div class="progress_bar">
+                <div class="progress_line" data-value="80"></div>
+              </div>
+            </li>
+            <li>
+              <p>Laravel Filament</p>
+              <div class="progress_bar">
+                <div class="progress_line" data-value="60"></div>
+              </div>
+            </li>
+            <li>
+              <p>React Native</p>
+              <div class="progress_bar">
+                <div class="progress_line" data-value="40"></div>
+              </div>
+            </li>
+            <li>
+              <p>Bootstrap</p>
+              <div class="progress_bar">
+                <div class="progress_line" data-value="50"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="project_section">
+        <h1 class="header_title">Featured Project</h1>
+        <div class="project_container">
+          <div class="project_info">
+            <h3 class="project_title">
+              Leopards Resort and Hotel Automated Booking System
+            </h3>
+            <ul class="project_tech">
+              <li class="tech_badge">HTML</li>
+              <li class="tech_badge">CSS</li>
+              <li class="tech_badge">JavaScript</li>
+              <li class="tech_badge">PHP</li>
+            </ul>
+            <p class="project_history">
+              Our team of 5 developers and CreativeDevLabs partnered with
+              Leopards Resort and Hotel to develop an automated booking system
+              designed to streamline the reservation process, reduce repetitive
+              and time-consuming tasks, and minimize booking errors. The system
+              aims to improve the efficiency of managing reservations while
+              reducing the likelihood of human error, allowing the hotel staff
+              to focus on providing better service to their guests.
+            </p>
+            <div class="project_cta">
+              <a class="btn_primary btn_live_demo" href="">Live Demo</a>
+              <a class="btn_secondary btn_view_code" href="">View Code</a>
+            </div>
+          </div>
+          <div class="card project_info">
+            <h1>Problems & Solutions</h1>
+            <div class="project-breakdown">
+              <div class="breakdown-item">
+                <p class="project_problem">Manual Booking Process</p>
+                <p class="project_solution">
+                  The automated booking system streamlines the reservation
+                  process, making bookings faster and more efficient.
+                </p>
+              </div>
+              <div class="breakdown-item">
+                <p class="project_problem">Human Errors</p>
+                <p class="project_solution">
+                  The system automates data entry and validation to minimize
+                  errors and maintain accurate reservation records.
+                </p>
+              </div>
+              <div class="breakdown-item">
+                <p class="project_problem">Double Bookings</p>
+                <p class="project_solution">
+                  The system automatically updates room availability, helping
+                  prevent conflicting or duplicate reservations.
+                </p>
+              </div>
+              <div class="breakdown-item">
+                <p class="project_problem">Disorganized Records</p>
+                <p class="project_solution">
+                  The system organizes reservation data in one centralized
+                  database, allowing staff to access and manage records more
+                  easily.
+                </p>
+              </div>
+              <div class="breakdown-item">
+                <p class="project_problem">Inefficient Management</p>
+                <p class="project_solution">
+                  By automating routine tasks, the system allows staff to manage
+                  bookings more efficiently and focus on providing better
+                  service to guests.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact_section">
+        <h1 class="header_title">Got an Idea? Let's Talk.</h1>
+        <div class="card contact_container">
+          <ul>
+            <li>
+              <i class="fa-brands fa-linkedin-in"></i>
+              <a href="">LinkedIn - Melchard Lina</a>
+            </li>
+            <li>
+              <i class="fa-brands fa-facebook-f"></i>
+              <a href="">Facebook - Melchard Lina</a>
+            </li>
+            <li>
+              <i class="fa-regular fa-envelope"></i>
+              <a href="">Gmail - melchardlina@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>© 2026 Melchard Lina. All rights reserved.</p>
+    </footer>
   </body>
 
   <script src="./assets/js/app.js"></script>
