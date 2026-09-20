@@ -20,6 +20,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   background-color: var(--bg);
@@ -90,6 +94,7 @@ section {
   padding-left: 5rem;
   padding-right: 5rem;
   padding-bottom: 5rem;
+  scroll-margin-top: 100px;
 }
 
 /* Header */
@@ -308,6 +313,10 @@ header .logo {
   width: 50%;
 }
 
+.info_1 {
+  padding-top: 2.5rem;
+}
+
 .project_title {
   font-size: 2rem;
 }
@@ -354,8 +363,8 @@ header .logo {
   flex-wrap: wrap;
 }
 
-.btn_live_demo,
-.btn_view_code {
+.btn_visit_site,
+.btn_view_app {
   padding: 0.75rem 1.5rem;
   text-align: center;
 }
@@ -376,6 +385,7 @@ header .logo {
   align-items: center;
   gap: 2rem;
   padding: 1rem 0;
+  flex-wrap: wrap;
 }
 
 .contact_container i {
@@ -490,6 +500,26 @@ footer {
     border: 2px solid var(--text);
     text-align: center;
     border-radius: 50%;
+  }
+
+  .contact_container {
+    width: 100%;
+  }
+
+  .contact_container ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    /* gap: 2rem; */
+  }
+
+  .contact_container a {
+    display: none;
+  }
+
+  .contact_container i:hover {
+    transform: scale(1.2);
   }
 }
 
