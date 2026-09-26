@@ -9,7 +9,19 @@ const Roles = [
   "Frontend Web Developer",
   "Mobile App Developer",
 ];
+// sections
+const HomeSection = document.querySelector("#home_section");
+const AboutSection = document.querySelector("#about_section");
+const StackSection = document.querySelector("#stack_section");
+const ProjectSection = document.querySelector("#project_section");
+const ContactSection = document.querySelector("#contact_section");
+
 const ProgressLine = document.querySelectorAll(".progress_line");
+const ViewMyWorkBtn = document.querySelector(".btn_view_my_work");
+const AboutContactBtn = document.querySelector(".btn_about_contact");
+const PreviewContainer = document.querySelector(".preview_container");
+const PreviewBtn = document.querySelector(".btn_preview");
+const CloseBtn = document.querySelector(".close_btn");
 
 document.addEventListener("DOMContentLoaded", (event) => {
   //   Hide navigation
@@ -89,6 +101,70 @@ document.addEventListener("DOMContentLoaded", (event) => {
   sections.forEach((section) => {
     observer.observe(section);
   });
+
+  // view my work button redirect to projects
+  ViewMyWorkBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    ProjectSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+  // about contact btn redirect to contact
+  AboutContactBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    ContactSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+
+  // preview button
+  PreviewBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    PreviewContainer.classList.add("active");
+  });
+
+  CloseBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    PreviewContainer.classList.remove("active");
+  });
+
+  // carousel navigation
+  const carousel = document.querySelector(".preview .carousel");
+  const images = document.querySelectorAll(".preview img");
+
+  const prevBtn = document.querySelector(".preview_left");
+  const nextBtn = document.querySelector(".preview_right");
+
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const imageWidth = images[0].offsetWidth;
+    const gap = 16; // 2rem
+
+    carousel.style.transform = `translateX(-${currentIndex * (imageWidth + gap)}px)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < images.length - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener("resize", updateCarousel);
 });
 
 const progressAnimation = (progressBars) => {

@@ -31,7 +31,9 @@
         <a data-value="about_section" href="">About</a>
         <a data-value="stack_section" href="">Stack</a>
         <a data-value="project_section" href="">Project</a>
-        <a class="contact_btn btn_primary" data-value="contact_section" href="">Contact</a>
+        <a class="contact_btn btn_primary" data-value="contact_section" href=""
+          >Contact</a
+        >
       </div>
       <i class="fa-solid fa-bars menu_btn"></i>
       <div class="toggle_nav">
@@ -54,11 +56,25 @@
           <p class="tagline">
             Building solutions that work, one line of code at a time.
           </p>
-          <a href="" class="download_resume btn_secondary">Download Resume</a>
+          <a
+            href="/assets/file/MelchardLinaResume.pdf"
+            download=""
+            class="download_resume btn_secondary"
+            >Download Resume</a
+          >
           <div class="contacts_home">
-            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-            <a href=""><i class="fa-regular fa-envelope"></i></a>
+            <a
+              href="https://www.linkedin.com/in/melchard-lina-83330a263/"
+              target="_blank"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.facebook.com/melchard.lina/" target="_blank">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="mailto:melchardlina@gmail.com?subject=Portfolio%20Inquiry">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
           </div>
         </div>
       </section>
@@ -164,8 +180,13 @@
               service to their guests.
             </p>
             <div class="project_cta">
-              <a class="btn_primary btn_visit_site" href="">Visit Site</a>
-              <a class="btn_secondary btn_view_app" href="">View App</a>
+              <a
+                class="btn_primary btn_visit_site"
+                href="https://leopardsresort.com"
+                target="_blank"
+                >Visit Site</a
+              >
+              <a class="btn_secondary btn_preview" href="">Preview</a>
             </div>
           </div>
           <div class="card project_info">
@@ -217,16 +238,27 @@
         <div class="card contact_container">
           <ul>
             <li>
-              <i class="fa-brands fa-linkedin-in"></i>
-              <a href="">Melchard Lina</a>
+              <a
+                href="https://www.linkedin.com/in/melchard-lina-83330a263/"
+                target="_blank"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
             </li>
             <li>
-              <i class="fa-brands fa-facebook-f"></i>
-              <a href="">Melchard Lina</a>
+              <a href="https://www.facebook.com/melchard.lina/" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span>Facebook</span>
+              </a>
             </li>
             <li>
-              <i class="fa-regular fa-envelope"></i>
-              <a href="">melchardlina@gmail.com</a>
+              <a
+                href="mailto:melchardlina@gmail.com?subject=Portfolio%20Inquiry"
+              >
+                <i class="fa-regular fa-envelope"></i>
+                <span>Email</span>
+              </a>
             </li>
           </ul>
         </div>
@@ -235,7 +267,55 @@
     <footer>
       <p>© 2026 Melchard Lina. All rights reserved.</p>
     </footer>
-  </body>
 
-  <script src="./assets/js/app.js"></script>
+    <!-- Preview -->
+    <div class="preview_container">
+      <div class="card preview">
+        <div class="carousel_container">
+          <div class="carousel">
+            <picture>
+              <source
+                media="(max-width:500px)"
+                srcset="/assets/images/booking/leopards/mobile/image.png"
+              />
+              <source
+                media="(max-width:900px)"
+                srcset="/assets/images/booking/leopards/tablet/image.png"
+              />
+              <img src="/assets/images/booking/leopards/pc/image.png" alt="" />
+            </picture>
+            <picture>
+              <source
+                media="(max-width:500px)"
+                srcset="/assets/images/booking/leopards/mobile/image1.png"
+              />
+              <source
+                media="(max-width:900px)"
+                srcset="/assets/images/booking/leopards/tablet/image1.png"
+              />
+              <img src="/assets/images/booking/leopards/pc/image1.png" alt="" />
+            </picture>
+            <picture>
+              <source
+                media="(max-width:500px)"
+                srcset="/assets/images/booking/leopards/mobile/image2.png"
+              />
+              <source
+                media="(max-width:900px)"
+                srcset="/assets/images/booking/leopards/tablet/image2.png"
+              />
+              <img src="/assets/images/booking/leopards/pc/image2.png" alt="" />
+            </picture>
+          </div>
+        </div>
+        <div class="carousel_nav">
+          <i class="fa-solid fa-chevron-left preview_left arrow"></i>
+          <i class="fa-solid fa-chevron-right preview_right arrow"></i>
+        </div>
+        <i class="fa-solid fa-x close_btn"></i>
+      </div>
+    </div>
+
+    <script src="./assets/js/app.js"></script>
+  </body>
 </html>
