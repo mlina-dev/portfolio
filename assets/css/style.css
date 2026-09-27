@@ -392,7 +392,7 @@ header .logo {
 
 .preview {
   padding: 1rem;
-  width: 80%;
+  max-width: 80%;
   height: 80%;
   position: relative;
 }
@@ -422,9 +422,8 @@ header .logo {
 .preview img {
   height: 100%;
   width: 100%;
-  border-radius: 20px;
   box-shadow: -2px 2px 5px var(--dark_bg);
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .carousel_nav {
@@ -561,7 +560,7 @@ footer {
     position: fixed;
     top: 0px;
     right: 0px;
-    background: var(--dark_bg);
+    background: rgba(0, 0, 0, 0.9);
     border-left: 1px solid var(--light_bg);
     transition: all ease-in 1s;
   }
