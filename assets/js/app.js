@@ -148,6 +148,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const gap = 16; // 2rem
 
     carousel.style.transform = `translateX(-${currentIndex * (imageWidth + gap)}px)`;
+
+    if (currentIndex == 0) {
+      prevBtn.classList.add("inactive");
+    } else {
+      prevBtn.classList.remove("inactive");
+    }
+    if (currentIndex == images.length - 1) {
+      nextBtn.classList.add("inactive");
+    } else {
+      nextBtn.classList.remove("inactive");
+    }
   }
 
   nextBtn.addEventListener("click", () => {
